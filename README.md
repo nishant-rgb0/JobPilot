@@ -28,9 +28,11 @@ A REST API built with FastAPI for tracking job applications — status updates, 
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt
+
 3. Start PostgreSQL via Docker:
 
-docker run --name jobpilot-postgres -e POSTGRES_PASSWORD=yourpassword -e POSTGRES_DB=jobpilot -p 5433:5432 -d postgres
+docker run --name jobpilot-postgres -e 
+POSTGRES_PASSWORD=yourpassword -e POSTGRES_DB=jobpilot -p 5433:5432 -d postgres
 
 4. Create a `.env` file with your `DATABASE_URL` (see `.env.example`)
 5. Run migrations:
