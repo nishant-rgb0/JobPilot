@@ -24,26 +24,33 @@ A REST API built with FastAPI for tracking job applications — status updates, 
 ## Running Locally
 
 1. Clone the repo
+
 2. Create a virtual environment and install dependencies:
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
+
+```bash
+   python -m venv venv
+   venv\Scripts\activate
+   pip install -r requirements.txt
+```
 
 3. Start PostgreSQL via Docker:
 
-docker run --name jobpilot-postgres -e 
-POSTGRES_PASSWORD=yourpassword -e POSTGRES_DB=jobpilot -p 5433:5432 -d postgres
+```bash
+   docker run --name jobpilot-postgres -e POSTGRES_PASSWORD=yourpassword -e POSTGRES_DB=jobpilot -p 5433:5432 -d postgres
+```
 
 4. Create a `.env` file with your `DATABASE_URL` (see `.env.example`)
+
 5. Run migrations:
 
-alembic upgrade head
+```bash
+   alembic upgrade head
+```
 
 6. Start the server:
 
-uvicorn main:app --reload
+```bash
+   uvicorn main:app --reload
+```
 
 7. Visit `http://127.0.0.1:8000/docs` for interactive API documentation
-
-
-
